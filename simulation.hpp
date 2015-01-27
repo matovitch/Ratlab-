@@ -44,6 +44,8 @@ public:
                     std::cout << _map.build_view(_rats);    // display
                 }*/
             }
+            
+            std::cout << getGoals() << std::endl;
         }
     }
 
@@ -121,7 +123,7 @@ private:
             sumFitness += rat->getFitness();
         }
 
-        std::shuffle(goodMates.begin(), goodMates.end(), _urng); //work but valgring detects errors
+        std::shuffle(goodMates.begin(), goodMates.end(), _urng);
 
         for (std::size_t i = 0; i < c_newRatsPerTurn; i++)
         {

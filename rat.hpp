@@ -26,7 +26,7 @@ public:
 
     int look(int i, int j) const
     {
-        return _position.getColor();
+        return _position.getColor(i, j);
     }
 
     int getDna(std::size_t i) const
@@ -82,10 +82,12 @@ private:
         bool isValid()   const { return _rPtr != NULL; }
         
         bool isInvalid() const { return _rPtr == NULL; }
+        
+        int getColor(int i, int j) { return _vPtr[i * _mapWidth + j]; }
 
-        std::size_t getX() const {return (_rPtr - _map->_realMap) % _map->_mapWidth; }
+        std::size_t getX() const { return (_rPtr - _map->_realMap) % _map->_mapWidth; }
 
-        std::size_t getY() const {return (_rPtr - _map->_realMap) / _map->_mapWidth; }
+        std::size_t getY() const { return (_rPtr - _map->_realMap) / _map->_mapWidth; }
 
         void getRandom(URNG& urng)
         {

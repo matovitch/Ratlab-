@@ -83,7 +83,7 @@ private:
         
         bool isInvalid() const { return _rPtr == NULL; }
         
-        int getColor(int i, int j) const { return _vPtr[j * _mapWidth + i]; }
+        int getColor(int i, int j) const { return _vPtr[j * _map->_mapWidth + i]; }
 
         std::size_t getX() const { return (_rPtr - _map->_realMap) % _map->_mapWidth; }
 
